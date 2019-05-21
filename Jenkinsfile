@@ -5,8 +5,7 @@ pipeline {
     skipDefaultCheckout true
   }
   stages {
-      stage('Test') {
-      agent { label 'nodejs-app' }
+    stage('Test') {
       steps {
         checkout scm
         container('nodejs') {
@@ -14,7 +13,6 @@ pipeline {
           sh 'node --version'
         }
       }
-    }
     }
   }
 }
